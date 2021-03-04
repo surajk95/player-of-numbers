@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:800&family=Ubuntu:wght@400,700&display=swap');
+.App {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Source Code Pro';
+  font-weight: 300;
+  color: #FFB4E8;
+  background: linear-gradient(110deg, #FF5DC3, #FF7AF2 70%, #9039FF 100%);
+  .header {
+    position: fixed;
+    top: 20px;
+    left: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 3.82px;
+    color: #DF3A93;
+  }
+  .mode {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+    margin-top: 75px;
+    .item {
+      cursor: not-allowed;
+      font: 700 50px 'Poppins', sans-serif;
+      text-transform: uppercase;
+      color: #FF5999;
+      &.active {
+        cursor: pointer;
+        color: white;
+      }
+      &.multi {
+        color: #F259FF;
+      }
+    }
+  }
+  .subtitle {
+    font: 400 18px 'Ubuntu', sans-serif;
+    position: fixed;
+    top: 68%;
+    left: 20px;
+    width: 100%;
+    .suffix {
+      span {
+        margin-right: 20px;
+      }
+      .activeSuffix {
+        color: white;
+        font-weight: 700;
+      }
+      input[type="radio"] {
+        border: solid 1px #FF43B4;
+        background: none;
+      }
+    }
+  }
+  form {
+    position: fixed;
+    left: 0;
+    top: calc(50% - 50px);
+    width: 100%;
+    height: 100px;
+    input {
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(110deg, #D74F9C, #F46AA0 50%, #DC52FF 100%);
+      color: white;
+      outline: none;
+      padding: 15px 25px;
+      font-family: 'Ubuntu';
+      font-weight: 700;
+      font-size: 30px;
+      border: none;
+      &::placeholder {
+        color: #9a376f;
+      }
+    }
+    button {
+      margin-left: -60px;
+      background-color: inherit;
+      border: none;
+      outline: none;
+      color: white;
+      font-size: 3rem;
+      cursor: pointer;
+    }
+  }
+
+  .reset {
+    position: fixed;
+    left: 20px;
+    top: 35%;
+    background-color: #ff7600;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    font: 400 16px 'Ubuntu';
+    &:hover {
+      background-color: #FF5EC4;
+    }
+  }
+  
+  .errorMessage {
+    margin: 20px auto;
+    height: 20px;
+    font-size: 1.5rem;
+    color: red;
+  }
+
+  .scoreContainer {
+    position: fixed;
+    left: 30px;
+    bottom: 20px;
+    font: bold 85px 'Ubuntu', sans-serif;
+    .score {
+      color: white;
+    }
+    .speed {
+      color: #FF5EC4;
+    }
+  }
+}
+
+
