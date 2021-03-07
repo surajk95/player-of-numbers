@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/player-of-numbers/static/css/main.27bd141a.chunk.css",
+    "main.js": "/player-of-numbers/static/js/main.9c82284d.chunk.js",
+    "main.js.map": "/player-of-numbers/static/js/main.9c82284d.chunk.js.map",
+    "runtime-main.js": "/player-of-numbers/static/js/runtime-main.b226ac98.js",
+    "runtime-main.js.map": "/player-of-numbers/static/js/runtime-main.b226ac98.js.map",
+    "static/js/2.9a1bbd62.chunk.js": "/player-of-numbers/static/js/2.9a1bbd62.chunk.js",
+    "static/js/2.9a1bbd62.chunk.js.map": "/player-of-numbers/static/js/2.9a1bbd62.chunk.js.map",
+    "index.html": "/player-of-numbers/index.html",
+    "precache-manifest.ac388368556527d06f65d6c306c9d386.js": "/player-of-numbers/precache-manifest.ac388368556527d06f65d6c306c9d386.js",
+    "service-worker.js": "/player-of-numbers/service-worker.js",
+    "static/css/main.27bd141a.chunk.css.map": "/player-of-numbers/static/css/main.27bd141a.chunk.css.map",
+    "static/media/App.scss": "/player-of-numbers/static/media/radiance.08846b1a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b226ac98.js",
+    "static/js/2.9a1bbd62.chunk.js",
+    "static/css/main.27bd141a.chunk.css",
+    "static/js/main.9c82284d.chunk.js"
+  ]
+}
