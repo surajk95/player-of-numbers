@@ -1,6 +1,4 @@
 import React from 'react';
-import createDictionary from 'dictionary-trie'
-import words from './words_dictionary.json';
 
 import Input from './components/input';
 import Score from './components/score';
@@ -13,62 +11,70 @@ class App extends React.Component {
     error: false,
     words: [],
     score :0,
-    suffix: 'tion',
-    suffixes: [
-      'tion',
-      'sion',
-      'ous',
-      'er',
-      'ment',
-    ],
+    modes: ['multiply', 'add', 'subtract'],
+    mode: 'multiply',
+    x: 0,
+    y: 0,
+    maxLimitX: 2,
+    maxLimitY: 1,
+    solution: 0,
     startTime: new Date(),
     speed: 0
   }
 
   componentDidMount() {
-    import(`./words_dictionary.json`)
-    .then(( Dictionary ) => {
-      let dictionary = Dictionary.default;
-      let words = [];
-      for(let item in dictionary) {
-        words.push(item);
-      }
-      this.setState({ trie: createDictionary(words) });
-      //console.log(`dictionary`, words[100]);
-    });
+    this.generatePuzzle();
   }
 
-  resetState = () => {
+  generatePuzzle = () => {
+    const { maxLimitX, maxLimitY, mode } = this.state;
+    let i=0, x=0, y=0;
+    while(i<maxLimitX) {
+      x = x*10 + Math.floor(Math.random()*10);
+      i++;
+    }
+    i=0;
+    while(i<maxLimitY) {
+      y = y*10 + Math.floor(Math.random()*10);
+      i++;
+    }
+    const solution = mode==='multiply' ? (x*y) : mode==='add' ? (x+y) : (x-y);
+    this.setState({ x, y, solution });
+  }
+
+  resetState = (mode='multiply') => {
     this.setState({
       score: 0,
       speed: 0,
       words: [],
+      mode,
       error: false,
-      errorMessage: ''
+      errorMessage: '',
+      solution: -999999,
+    }, () => {
+      this.generatePuzzle();
     });
   }
-  changeSuffix = (value) => {
-    this.setState({ suffix: value });
-    this.resetState();
+  changeMode = (value) => {
+    this.resetState(value);
   }
 
-  addWord = (word) => {
-    //console.log(this.state.trie);
-    if(!word.toLowerCase().endsWith(this.state.suffix)) {
-      this.setState({ error: true, errorMessage: `Word does not end with ${this.state.suffix}`});
-    }
-    else if(this.state.words.includes(word)) {
-      this.setState({ error: true, errorMessage: `You have already entered that.`});
-    }
-    else if(!this.state.trie.includes(word)) {
-      this.setState({ error: true, errorMessage: `Not an English word.`});
+  validateAnswer = (word) => {
+    const answer = parseInt(word);
+    const { solution, mode } = this.state;
+    console.log(`zzz`, answer, solution);
+    if(answer !== solution) {
+      this.setState({ error: true, errorMessage: `Not the right answer`});
     }
     else {
-      if(this.state.score === 0)
+      if(this.state.score === 0) {
+        this.setState({ speed: 1 });
         this.startTimer();
+      } 
       else
         this.endTimer();
-      this.setState({ error: false, score: this.state.score+1, words: [...this.state.words, word]});
+      this.setState({ error: false, score: this.state.score+1 });
+      this.generatePuzzle();
     }
   }
 
@@ -82,47 +88,78 @@ class App extends React.Component {
     let endTime = new Date();
     var timeDiff = endTime - this.state.startTime; //in ms
     //Strip the ms, convert to minutes.
-    timeDiff /= 1000*60;
+    timeDiff /= 1000*60*60;
     let speed = Math.round(this.state.score/timeDiff, 3);
     //console.log(speed);
     this.setState({ speed });
   }
 
+  getModeSymbol = () => {
+    const { mode } = this.state;
+    switch(mode) {
+      case 'multiply':
+        return 'x';
+      case 'add':
+        return '+';
+      case 'subtract':
+        return '-';
+      default:
+        return 'x';
+    }
+  }
+
+  changeMax = (dimension, value, mode) => {
+    this.setState({ [dimension]: value }, this.resetState(mode));
+  }
+
   render() {
+    const { x, y, maxLimitX, maxLimitY, modes, mode } = this.state;
     return (
       <div className="App">
         <div className="header">
-          PLAYER OF WORDS
+          PLAYER OF NUMBERS
         </div>
         <div className="mode">
-          <div className="item" title="future release">single player</div>
-          <div className="item active">zen</div>
-          <div className="item multi" title="future release">multiplayer</div>
+          <div className="item active">{x} {this.getModeSymbol()} {y}</div>
         </div>
         <div className="subtitle">
           <div className="suffix">
-          Enter words ending with&nbsp;&nbsp;
             {
-              this.state.suffixes.map((item, index) => {
+              modes.map((item, index) => {
                 return (
-                <span key={index} className={this.state.suffix===item ? 'activeSuffix' : ''}>
+                <span key={index} className={mode===item ? 'activeMode' : ''}>
                   <input
                     type="radio"
                     name="suffix"
-                    checked={this.state.suffix==item}
-                    onChange={()=>this.changeSuffix(item)}
+                    checked={mode==item}
+                    onChange={()=>this.changeMode(item)}
                   />
                   {item}
                 </span>
               )})
             }
-
+            <span style={{ marginLeft: '25px'}}>Limit LHS to</span> <input
+                    type="text"
+                    name="limit"
+                    placeholder="Ex. 2"
+                    onChange={(e)=>this.changeMax('maxLimitX', e.target.value, mode)}
+                    value={maxLimitX}
+                    className="limitInput"
+                  /><span> digits</span>
+            <span style={{ marginLeft: '25px'}}>Limit RHS to</span> <input
+                    type="text"
+                    name="limit"
+                    placeholder="Ex. 1"
+                    onChange={(e)=>this.changeMax('maxLimitY', e.target.value, mode)}
+                    value={maxLimitY}
+                    className="limitInput"
+                  /><span> digits</span>
           </div>
         </div>
-        <button className="reset" onClick={this.resetState}>
+        <button className="reset" onClick={()=>this.resetState(mode)}>
           Reset
         </button>
-        <Input addWord={this.addWord} />
+        <Input validateAnswer={this.validateAnswer} />
         <div className="errorMessage">
           {
             this.state.error &&

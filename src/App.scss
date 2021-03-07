@@ -8,8 +8,11 @@
   overflow: hidden;
   font-family: 'Source Code Pro';
   font-weight: 300;
-  color: #FFB4E8;
-  background: linear-gradient(110deg, #FF5DC3, #FF7AF2 70%, #9039FF 100%);
+  color: #FFD10E;
+  background: radial-gradient(#161616 5%, #271F0B 45%, #362701 50%, #271F0B 55%, #161616 60%);
+  background-image: url('./components/radiance.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
   .header {
     position: fixed;
     top: 20px;
@@ -18,36 +21,32 @@
     font-size: 14px;
     font-weight: 800;
     letter-spacing: 3.82px;
-    color: #DF3A93;
+    color: #FFB800;
   }
   .mode {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 0 20px;
     margin-top: 75px;
     .item {
       cursor: not-allowed;
       font: 700 50px 'Poppins', sans-serif;
       text-transform: uppercase;
-      color: #FF5999;
-      &.active {
-        cursor: pointer;
-        color: white;
-      }
-      &.multi {
-        color: #F259FF;
-      }
+      color: #FFB800;
     }
   }
   .subtitle {
-    font: 400 18px 'Ubuntu', sans-serif;
+    font: 400 16px 'Ubuntu', sans-serif;
     position: fixed;
     top: 68%;
     left: 20px;
     width: 100%;
+    text-transform: uppercase;
     .suffix {
       span {
-        margin-right: 20px;
+        margin-right: 10px;
+        margin-top: -5px;
+        font-size: 14px;
       }
       .activeSuffix {
         color: white;
@@ -57,27 +56,41 @@
         border: solid 1px #FF43B4;
         background: none;
       }
+      .limitInput {
+        width: 20px;
+        background: black;
+        border: none;
+        outline: none;
+        color: #FFD10E;
+        text-align: center;
+        padding: 5px 10px;
+      }
     }
   }
   form {
     position: fixed;
     left: 0;
-    top: calc(50% - 50px);
+    top: calc(50% - 100px);
     width: 100%;
     height: 100px;
+    text-align: center;
     input {
-      width: 100%;
+      width: 400px;
       height: 100px;
-      background: linear-gradient(110deg, #D74F9C, #F46AA0 50%, #DC52FF 100%);
-      color: white;
+      background: linear-gradient(110deg, #1C1208, #000000 50%, #1C1208 100%);
+      color: #FFB800;
       outline: none;
       padding: 15px 25px;
-      font-family: 'Ubuntu';
-      font-weight: 700;
-      font-size: 30px;
+      font-family: 'Source Code Pro';
+      font-weight: 400;
+      font-size: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 5px;
       border: none;
       &::placeholder {
-        color: #9a376f;
+        color: #FFB800;
+        font-weight: 300;
       }
     }
     button {
@@ -94,16 +107,18 @@
   .reset {
     position: fixed;
     left: 20px;
-    top: 35%;
-    background-color: #ff7600;
+    top: calc(50% - 50px);
+    background-color: black;
     border: none;
     outline: none;
     color: white;
     cursor: pointer;
     padding: 10px 20px;
-    font: 400 16px 'Ubuntu';
+    font: 400 14px 'Source Code Pro';
+    text-transform: uppercase;
+    z-index: 2;
     &:hover {
-      background-color: #FF5EC4;
+      color: #FFB800;
     }
   }
   
@@ -118,12 +133,15 @@
     position: fixed;
     left: 30px;
     bottom: 20px;
-    font: bold 85px 'Ubuntu', sans-serif;
+    font: bold 75px 'Ubuntu', sans-serif;
     .score {
       color: white;
     }
     .speed {
-      color: #FF5EC4;
+      color: #FFD10E;
+    }
+    .passive {
+      color: #664A03;
     }
   }
 }

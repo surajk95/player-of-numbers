@@ -6,14 +6,17 @@ class Input extends React.Component {
     }
 
     handleChange = (event) => {
-        if(!event.target.value.includes(' '))
-            this.setState({ word: event.target.value });
+        const value = event.target.value;
+        if(isNaN(value) && value!=='-') {
+            return;
+        }
+        this.setState({ word: value });
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
         if(this.state.word.trim() !== '') {
-            this.props.addWord(this.state.word);
+            this.props.validateAnswer(this.state.word);
             this.setState({ word: '' });
         }
     }
@@ -23,7 +26,7 @@ class Input extends React.Component {
             <>
                 <form onSubmit={this.handleSubmit}>
                     <input
-                        placeholder="Start typing here"
+                        placeholder="Enter your answer here"
                         value={this.state.word}
                         onChange={this.handleChange}
                         autoFocus
