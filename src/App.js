@@ -62,7 +62,6 @@ class App extends React.Component {
   validateAnswer = (word) => {
     const answer = parseInt(word);
     const { solution, mode } = this.state;
-    console.log(`zzz`, answer, solution);
     if(answer !== solution) {
       this.setState({ error: true, errorMessage: `Not the right answer`});
     }
@@ -88,7 +87,7 @@ class App extends React.Component {
     let endTime = new Date();
     var timeDiff = endTime - this.state.startTime; //in ms
     //Strip the ms, convert to minutes.
-    timeDiff /= 1000*60*60;
+    timeDiff /= 1000*60;
     let speed = Math.round(this.state.score/timeDiff, 3);
     //console.log(speed);
     this.setState({ speed });

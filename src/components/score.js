@@ -6,7 +6,7 @@ export default function Score(props) {
             <span className="speed">
                 {props.speed}
             </span>
-            &nbsp;<span className="passive">calculations per second, score: </span>&nbsp; 
+            &nbsp;<span className="passive">calculations per minute, score: </span>&nbsp; 
             <span className="score passive">
                 {props.score} 
             </span>
