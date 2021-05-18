@@ -1,0 +1,20 @@
+.mobileContainer {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 999;
+}
+.mobileContainer  >img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 640px) {
+    .mobileContainer {
+        display: block;
+    }
+}

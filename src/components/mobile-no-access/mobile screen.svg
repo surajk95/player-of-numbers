@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="316.378" height="669.8" viewBox="0 0 316.378 669.8">
+  <defs>
+    <linearGradient id="linearGradient-2" x1="0" x2="316.378" y1="0" y2="637.29" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="rgb(128,255,0)"/>
+      <stop offset=".4" stop-color="rgb(97,255,0)"/>
+      <stop offset="1" stop-color="rgb(15,170,26)"/>
+    </linearGradient>
+    <rect id="rect-3" width="302" height="302" x="9.579" y="367.8"/>
+    <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="316.378" height="669.8" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#rect-3"/>
+    </mask>
+  </defs>
+  <g>
+    <g>
+      <path fill="url(#linearGradient-2)" fill-rule="evenodd" d="M12 0h292.3777185c6.6229803 0 12 5.3770197 12 12v613.29c0 6.6229803-5.3770197 12-12 12H12c-6.6229803 0-12-5.3770197-12-12V12C0 5.3770197 5.3770197 0 12 0z"/>
+      <text font-size="0" style="white-space:pre">
+        <tspan x="17.579" y="123.8" fill="rgb(25,123,43)" font-family="Poppins ExtraBold" font-size="40" font-weight="800" style="white-space:pre;text-transform:none">The real </tspan> <tspan x="17.579" y="179.8" fill="rgb(25,123,43)" font-family="Poppins ExtraBold" font-size="40" font-weight="800" style="white-space:pre;text-transform:none">players play </tspan> <tspan x="17.579" y="235.8" fill="rgb(25,123,43)" font-family="Poppins ExtraBold" font-size="40" font-weight="800" style="white-space:pre;text-transform:none">on a </tspan> <tspan x="17.579" y="291.8" fill="rgb(25,123,43)" font-family="Poppins ExtraBold" font-size="40" font-weight="800" style="white-space:pre;text-transform:none">computer</tspan>
+      </text>
+    </g>
+    <g transform="rotate(-179.999936 160.57906553 518.79953763)">
+      <use fill="none" xlink:href="#rect-3"/>
+      <g mask="url(#mask-4)">
+        <g>
+          <path fill="rgb(0,0,0)" fill-rule="evenodd" d="M21.19442197 646.26255032h278.76922608V506.87790677H21.19442197v139.38464355zm267.15386963-11.61541748H32.80983945V518.49326321H288.3482916v116.15386963z"/>
+          <g>
+            <rect width="17.423" height="11.615" x="44.425" y="530.107" fill="rgb(0,0,0)" rx="0" ry="0"/>
+            <rect width="17.423" height="11.615" x="79.271" y="530.107" fill="rgb(0,0,0)" rx="0" ry="0"/>
+            <rect width="17.423" height="11.615" x="114.118" y="530.107" fill="rgb(0,0,0)" rx="0" ry="0"/>
+            <rect width="17.423" height="11.615" x="148.964" y="530.107" fill="rgb(0,0,0)" rx="0" ry="0"/>
+            <rect width="17.423" height="11.615" x="183.81" y="530.107" fill="rgb(0,0,0)" rx="0" ry="0"/>
+            <rect width="17.423" height="11.615" x="218.656" y="530.107" fill="rgb(0,0,0)" rx="0" ry="0"/>
+            <rect width="17.423" height="11.615" x="253.502" y="530.107" fill="rgb(0,0,0)" rx="0" ry="0"/>
+            <g>
+              <rect width="17.423" height="11.615" x="44.425" y="576.569" fill="rgb(0,0,0)" rx="0" ry="0"/>
+              <rect width="17.423" height="11.615" x="79.271" y="576.569" fill="rgb(0,0,0)" rx="0" ry="0"/>
+              <rect width="17.423" height="11.615" x="114.118" y="576.569" fill="rgb(0,0,0)" rx="0" ry="0"/>
+              <rect width="17.423" height="11.615" x="148.964" y="576.569" fill="rgb(0,0,0)" rx="0" ry="0"/>
+              <rect width="17.423" height="11.615" x="183.81" y="576.569" fill="rgb(0,0,0)" rx="0" ry="0"/>
+              <rect width="17.423" height="11.615" x="218.656" y="576.569" fill="rgb(0,0,0)" rx="0" ry="0"/>
+              <rect width="17.423" height="11.615" x="253.502" y="576.569" fill="rgb(0,0,0)" rx="0" ry="0"/>
+            </g>
+            <g>
+              <rect width="17.423" height="11.615" x="61.848" y="553.338" fill="rgb(0,0,0)" rx="0" ry="0"/>
+              <rect width="17.423" height="11.615" x="96.694" y="553.338" fill="rgb(0,0,0)" rx="0" ry="0"/>
+              <rect width="17.423" height="11.615" x="131.541" y="553.338" fill="rgb(0,0,0)" rx="0" ry="0"/>
+              <rect width="17.423" height="11.615" x="166.387" y="553.338" fill="rgb(0,0,0)" rx="0" ry="0"/>
+              <rect width="17.423" height="11.615" x="201.233" y="553.338" fill="rgb(0,0,0)" rx="0" ry="0"/>
+              <rect width="17.423" height="11.615" x="241.887" y="553.338" fill="rgb(0,0,0)" rx="0" ry="0"/>
+            </g>
+            <rect width="17.423" height="11.615" x="56.041" y="605.607" fill="rgb(0,0,0)" rx="0" ry="0"/>
+            <rect width="17.423" height="11.615" x="90.887" y="605.607" fill="rgb(0,0,0)" rx="0" ry="0"/>
+            <rect width="17.423" height="11.615" x="125.733" y="605.607" fill="rgb(0,0,0)" rx="0" ry="0"/>
+            <rect width="58.077" height="11.615" x="160.579" y="605.607" fill="rgb(0,0,0)" rx="0" ry="0"/>
+            <rect width="17.423" height="11.615" x="236.079" y="605.607" fill="rgb(0,0,0)" rx="0" ry="0"/>
+            <rect width="11.615" height="11.615" x="265.118" y="605.607" fill="rgb(0,0,0)" rx="0" ry="0"/>
+          </g>
+        </g>
+        <path fill="rgb(0,0,0)" fill-rule="evenodd" d="M166.3896036 512.6856057H154.774219v-29.37873423c0-9.46584154-3.68654886-18.36171615-10.37613924-25.0541523-5.44186577-5.43902-8.20110038-12.959575-7.565855-20.62752924.63239962-7.6708 4.58830923-14.63550076 10.84969846-19.10754 2.83293423-2.02473576 4.36146077-5.3001 4.08919616-8.76827961-.27220654-3.46817962-2.29130885-6.46843346-5.40498693-8.02245577l5.195155-10.39031c6.78890193 3.39442192 11.1956627 9.93661308 11.78839577 17.50531385.59552077 7.565855-2.7393723 14.71489192-8.91573692 19.1274023-3.47665885 2.48412423-5.67440577 6.35216347-6.02606154 10.611525-.35165577 4.25936154 1.17971654 8.43648616 4.20262038 11.45939 8.88454962 8.88454962 13.77909847 20.69838308 13.77909847 33.26663577v29.37873423z"/>
+      </g>
+    </g>
+  </g>
+</svg>

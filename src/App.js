@@ -2,6 +2,7 @@ import React from 'react';
 
 import Input from './components/input';
 import Score from './components/score';
+import MobileNoAccess from './components/mobile-no-access';
 
 import './App.scss';
 
@@ -115,6 +116,7 @@ class App extends React.Component {
     const { x, y, maxLimitX, maxLimitY, modes, mode } = this.state;
     return (
       <div className="App">
+        <MobileNoAccess />
         <div className="header">
           PLAYER OF NUMBERS
         </div>
