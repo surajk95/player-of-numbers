@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ac8d818008b1445cde5d5fb8f7fb0359",
+    "revision": "416575a08aa0dbf94c4aee44f9b3ee92",
     "url": "/player-of-numbers/index.html"
   },
   {
-    "revision": "8c24d426a9f2d5dcaee0",
-    "url": "/player-of-numbers/static/css/main.752ca52a.chunk.css"
+    "revision": "ec4c6a1a643249288793",
+    "url": "/player-of-numbers/static/css/main.ccf41ed9.chunk.css"
   },
   {
     "revision": "ecb030be778e2abd0654",
     "url": "/player-of-numbers/static/js/2.10a9a433.chunk.js"
   },
   {
-    "revision": "8c24d426a9f2d5dcaee0",
-    "url": "/player-of-numbers/static/js/main.f18d39a4.chunk.js"
+    "revision": "ec4c6a1a643249288793",
+    "url": "/player-of-numbers/static/js/main.3f1d80ad.chunk.js"
   },
   {
     "revision": "3bde407541893afde1ba",
