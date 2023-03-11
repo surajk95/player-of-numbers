@@ -31,12 +31,20 @@ class App extends React.Component {
     const { maxLimitX, maxLimitY, mode } = this.state;
     let i=0, x=0, y=0;
     while(i<maxLimitX) {
-      x = x*10 + Math.floor(Math.random()*10+1);
+      let randGen = 10
+      while(randGen>=10) {
+        randGen = Math.floor(Math.random()*10)
+      }
+      x = x*10 + randGen;
       i++;
     }
     i=0;
     while(i<maxLimitY) {
-      y = y*10 + Math.floor(Math.random()*10+1);
+      let randGen = 10
+      while(randGen>=10) {
+        randGen = Math.floor(Math.random()*10)
+      }
+      y = y*10 + randGen;
       i++;
     }
     const solution = mode==='multiply' ? (x*y) : mode==='add' ? (x+y) : (x-y);
