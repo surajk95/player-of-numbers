@@ -70,10 +70,15 @@ $primary-color: #24FF43;
       display: flex;
       align-items: center;
       height: 28px;
+      width: fit-content;
+      border: 2px solid #808080;
+      padding: 0;
+      border-radius: 4px;
       cursor: pointer;
       .item {
-        padding: 8px 12px;
-        border-radius: 4px;
+        height: 100%;
+        padding: 0px 10px;
+        border-radius: 2px;
         &.activeMode {
           background: $primary-color;
           color: black;
