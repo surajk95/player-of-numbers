@@ -32,7 +32,7 @@ class App extends React.Component {
     let i=0, x=0, y=0;
     while(i<maxLimitX) {
       let randGen = 10
-      while(randGen>=10) {
+      while(randGen===0 || randGen>=10) {
         randGen = Math.floor(Math.random()*10)
       }
       x = x*10 + randGen;
@@ -41,7 +41,7 @@ class App extends React.Component {
     i=0;
     while(i<maxLimitY) {
       let randGen = 10
-      while(randGen>=10) {
+      while(randGen===0 || randGen>=10) {
         randGen = Math.floor(Math.random()*10)
       }
       y = y*10 + randGen;
