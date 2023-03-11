@@ -25,12 +25,13 @@ class Input extends React.Component {
         return (
             <>
                 <form onSubmit={this.handleSubmit}>
+                    <div>
                     <input
-                        placeholder="Enter your answer here"
                         value={this.state.word}
                         onChange={this.handleChange}
                         autoFocus
                     />
+                    </div>
                 </form>
             </>
         )

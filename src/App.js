@@ -31,12 +31,12 @@ class App extends React.Component {
     const { maxLimitX, maxLimitY, mode } = this.state;
     let i=0, x=0, y=0;
     while(i<maxLimitX) {
-      x = x*10 + Math.floor(Math.random()*10);
+      x = x*10 + Math.floor(Math.random()*10+1);
       i++;
     }
     i=0;
     while(i<maxLimitY) {
-      y = y*10 + Math.floor(Math.random()*10);
+      y = y*10 + Math.floor(Math.random()*10+1);
       i++;
     }
     const solution = mode==='multiply' ? (x*y) : mode==='add' ? (x+y) : (x-y);
@@ -62,7 +62,7 @@ class App extends React.Component {
 
   validateAnswer = (word) => {
     const answer = parseInt(word);
-    const { solution, mode } = this.state;
+    const { solution } = this.state;
     if(answer !== solution) {
       this.setState({ error: true, errorMessage: `Not the right answer`});
     }
@@ -117,60 +117,66 @@ class App extends React.Component {
     return (
       <div className="App">
         <MobileNoAccess />
-        <div className="header">
-          PLAYER OF NUMBERS
-        </div>
-        <div className="mode">
-          <div className="item active">{x} {this.getModeSymbol()} {y}</div>
-        </div>
-        <div className="subtitle">
-          <div className="suffix">
-            {
-              modes.map((item, index) => {
-                return (
-                <span key={index} className={mode===item ? 'activeMode' : ''}>
-                  <input
-                    type="radio"
-                    name="suffix"
-                    checked={mode==item}
-                    onChange={()=>this.changeMode(item)}
-                  />
-                  {item}
-                </span>
-              )})
-            }
-            <span style={{ marginLeft: '25px'}}>Limit LHS to</span> <input
-                    type="text"
-                    name="limit"
-                    placeholder="Ex. 2"
-                    onChange={(e)=>this.changeMax('maxLimitX', e.target.value, mode)}
-                    value={maxLimitX}
-                    className="limitInput"
-                  /><span> digits</span>
-            <span style={{ marginLeft: '25px'}}>Limit RHS to</span> <input
-                    type="text"
-                    name="limit"
-                    placeholder="Ex. 1"
-                    onChange={(e)=>this.changeMax('maxLimitY', e.target.value, mode)}
-                    value={maxLimitY}
-                    className="limitInput"
-                  /><span> digits</span>
+        <div className="splitContainer">
+          <div className="screen screen1 subtitle">
+            <div className="header">
+              PLAYER<br/>OF<br/>NUMBERS
+            </div>
+            <div className="suffix">
+              <div className="options">
+              {
+                modes.map((item, index) => {
+                  return (
+                  <div key={index} className={`item ${mode===item ? 'activeMode' : ''}`} onClick={()=>this.changeMode(item)}>
+                    {item}
+                  </div>
+                )})
+              }
+              </div>
+            </div>
+            <div className="digits">
+              <div>Limit LHS to</div> <input
+                      type="text"
+                      name="limit"
+                      placeholder="Ex. 2"
+                      onChange={(e)=>this.changeMax('maxLimitX', e.target.value, mode)}
+                      value={maxLimitX}
+                      className="limitInput"
+              /><span> digits</span>
+              <div style={{marginTop: '25px'}}>Limit RHS to</div> <input
+                      type="text"
+                      name="limit"
+                      placeholder="Ex. 1"
+                      onChange={(e)=>this.changeMax('maxLimitY', e.target.value, mode)}
+                      value={maxLimitY}
+                      className="limitInput"
+              /><span> digits</span>
+            </div>
+          </div>
+          <div className="screen screen2">
+            <div className="mode">
+              <div className="item active">{x} {this.getModeSymbol()} {y}</div>
+            </div>
+            <div className="inputItem">
+              <Input validateAnswer={this.validateAnswer} />
+              <button className="reset" onClick={()=>this.resetState(mode)}>
+                Reset
+              </button>
+              <div className="errorMessage">
+              {
+                this.state.error &&
+                this.state.errorMessage
+              }
+              </div>
+            </div>
+          </div>
+          <div className="screen screen3">
+            <Score
+              score={this.state.score}
+              speed={this.state.speed}
+            />
           </div>
         </div>
-        <button className="reset" onClick={()=>this.resetState(mode)}>
-          Reset
-        </button>
-        <Input validateAnswer={this.validateAnswer} />
-        <div className="errorMessage">
-          {
-            this.state.error &&
-            this.state.errorMessage
-          }
-         </div>
-        <Score
-          score={this.state.score}
-          speed={this.state.speed}
-        />
       </div>
     );
   }
