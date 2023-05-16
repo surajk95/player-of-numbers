@@ -1,20 +1,29 @@
 import React from 'react';
 
 class Input extends React.Component {
-    state = {
-        word: ''
+    constructor(props) {
+        super(props);
+        this.state = {
+            word: '',
+            score: -1
+        }
     }
+    
+
+    resetScore() {
+        console.log("reset")
+        this.setState({score: this.props.score})
+     }
 
     handleChange = (event) => {
         const value = event.target.value;
-        if(isNaN(value) && value!=='-') {
-            return;
-        }
-        this.setState({ word: value });
+        if(this.props.score!==this.state.score)
+            this.props.validateAnswer(value, true)
+        this.setState({ word: value })
     }
 
     handleSubmit = (event) => {
-        event.preventDefault();
+        if(event) event.preventDefault();
         if(this.state.word.trim() !== '') {
             this.props.validateAnswer(this.state.word);
             this.setState({ word: '' });

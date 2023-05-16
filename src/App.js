@@ -11,7 +11,7 @@ class App extends React.Component {
     errorMessage: '',
     error: false,
     words: [],
-    score :0,
+    score: 0,
     modes: ['multiply', 'add', 'subtract'],
     mode: 'multiply',
     x: 0,
@@ -68,13 +68,10 @@ class App extends React.Component {
     this.resetState(value);
   }
 
-  validateAnswer = (word) => {
+  validateAnswer = (word, test=false) => {
     const answer = parseInt(word);
     const { solution } = this.state;
-    if(answer !== solution) {
-      this.setState({ error: true, errorMessage: `Not the right answer`});
-    }
-    else {
+    if(answer===solution) {
       if(this.state.score === 0) {
         this.setState({ speed: 1 });
         this.startTimer();
@@ -166,7 +163,7 @@ class App extends React.Component {
               <div className="item active">{x} {this.getModeSymbol()} {y}</div>
             </div>
             <div className="inputItem">
-              <Input validateAnswer={this.validateAnswer} />
+              <Input validateAnswer={this.validateAnswer} score={this.state.score} key={this.state.score} />
               <button className="reset" onClick={()=>this.resetState(mode)}>
                 Reset
               </button>
